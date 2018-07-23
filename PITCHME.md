@@ -8,6 +8,8 @@ July 25, 2018
 
 # What is WDI?
 
+@fa[arrow-down]
+
 +++
 
 #### What is WDI?
@@ -38,6 +40,8 @@ One stated goal for the tabular datasets is for researchers not within the core 
 
 # What is in the Research Hub?
 
+@fa[arrow-down]
+
 +++
 
 #### What is in the Research Hub?
@@ -48,6 +52,8 @@ First of slides under contents sub-header
 
 # Architecture
 
+@fa[arrow-down]
+
 +++
 
 #### Architecture
@@ -57,6 +63,8 @@ First of slides under architecture sub-header
 ---
 
 # Lessons Learned
+
+@fa[arrow-down]
 
 +++
 
