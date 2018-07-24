@@ -106,6 +106,18 @@ Goal: Release human-tagged labels so NLP researchers can improve on skill extrac
 
 Human-tagging is done on a small sample of job postings that we can release so someone externally can build on this work to build a model using their own feature engineering.
 
++++
+
+#### Representative analysis
+
+Goal: Release couple representative analysis by generating comparable statistics by occupation, geography, and time from both Research Hub data and relevent national labor market datasets released by the Bureau of Labor Statistics.
+
+- Job number distribution by state
+- National occupation major group distribution
+- Occupation major group distribution for CBSAs
+- Occupation Distribution Correlation by state
+- Percent change in Research Hub data v.s. JOLTS job openings data
+
 ---
 
 # Architecture
