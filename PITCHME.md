@@ -112,7 +112,7 @@ Goal:
 
 #### Architecture
 
-![architecture](https://drive.google.com/file/d/1f9c-tBr5XekwP7GL54Wo7MJM_58j3Aqt/view?usp=sharing)
+![architecture](https://www.dropbox.com/s/vozo6667cim5zze/research-hub-architecture.svg?dl=0)
 
 ---
 
