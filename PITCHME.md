@@ -49,9 +49,9 @@ The Research Hub is aimed primarily at the research community (e.g. labor econom
 
 #### How can the Research Hub help the Audience?
 
-- Economists would like to answer a variety of questions about the labor market and how it changes over time and geography. Job ads can information about competencies, occupations, and wages that can be viewed across these axes. We are able to 
+- Economists would like to answer a variety of questions about the labor market and how it changes over time and geography. Job ads can information about competencies, occupations, and wages that can be viewed across these axes. We are able to
 
-- NLP researchers interested in the workforce would like to build on the work we've done in skills-ml 
+- NLP researchers interested in the workforce would like to build on the work we've done in skills-ml
 
 ---
 
@@ -67,6 +67,7 @@ The Research Hub is aimed primarily at the research community (e.g. labor econom
 - Tabular datasets detailing different skill extraction methods, paired with evaluation metrics
 - JSON-LD datasets each representing an ontology of competencies and occupations, usable by the skills-ml library
 - Sequence-tagged labels of competencies for use in skill extraction algorithms
+- Representativeness analysis compares Research Hub data with data from Bureau of Labor Statistics
 
 +++
 
