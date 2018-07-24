@@ -112,7 +112,7 @@ Goal:
 
 #### Architecture
 
-![architecture](images/research-hub-architecture.png)
+![architecture](images/research-hub-architecture.svg)
 
 ---
 
