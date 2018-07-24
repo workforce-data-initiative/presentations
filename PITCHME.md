@@ -122,7 +122,7 @@ Human-tagging is done on a small sample of job postings that we can release so s
 
 #### How are the datasets computed?
 
-The current iteration has a map-reduce structure, with each property (e.g. a specific skill extractor or occupational classifier) being computed in the 'map' step, and saving its per-posting output to S3 (in partitioned files).
+The current iteration has a map-reduce structure, with each property (e.g. a specific skill extractor or occupational classifier) being computed in the 'map' step, and saving its per-posting output to S3 (in partitioned files). Each dataset is the result of a 'reduce' task that reads from the results from various 'map' tasks.
 
 +++
 
@@ -130,6 +130,18 @@ The current iteration has a map-reduce structure, with each property (e.g. a spe
 
 left nodes: map tasks
 right nodes: reduce tasks
+
++++
+
+#### Parellelization
+
+These steps are parallelized using Airflow's CeleryExecutor. A 'map' task is created per year/property, and a 'reduce' task each year/dataset. Originally we wanted to parallelize over day, but a partner data error forced us to zoom out to year. This is less than ideal but ~20 properties x 8 years still provides a lot of different parallel tasks.
+
++++
+
+#### Partitioning
+
+We want a deterministic partition key, to be able to rerun a map task and use data for job postings that have already been processed. Our first choice was date, but aforementioned partner data error forced a new pick: year + last 4 digits of job posting id.
 
 ---
 
