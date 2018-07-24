@@ -83,6 +83,8 @@ Goal: common entry points for economists, making single files as useful as possi
 
 Goal: a window into skill data by either more adventurous economists or NLP researchers looking for more details on the tradeoffs inherent in different skill extraction approaches. For each approach, package basic counts (year/soc code) alongside basic evaluation metrics
 
++++
+
 - Skill extractors: matching based on known competency framework strings, heuristic NLP approaches (e.g. noun phrases that end in 'skill/s'), trained models based on human-labelled data
 - Example Metrics: Recall of known competency frameworks (overall and per-occupation), total competency count, competencies per posting, competencies per occupation
 
@@ -92,8 +94,8 @@ Goal: a window into skill data by either more adventurous economists or NLP rese
 
 Goal: Release known competency frameworks in the same format to inferred ontologies. Using the CTDL-ASN format, we can point the skills-ml Ontology class at URLs here to provide pre-mapped ontologies for use without bundling large datasets in the library code
 
-- Initially, just our mapping of ONET competencies/occupations
-- Can combine results of skill extraction as ontologies
+- Mapping of ONET competencies/occupations
+- Can map results of skill extraction to ontologies, but the results are public so we don't need to be the people to do this
 
 +++
 
