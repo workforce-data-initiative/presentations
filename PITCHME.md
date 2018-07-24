@@ -94,7 +94,7 @@ Goal: a window into skill data by either more adventurous economists or NLP rese
 
 #### JSON-LD datasets
 
-Goal: 
+Goal:
 
 +++
 
@@ -112,7 +112,7 @@ Goal:
 
 #### Architecture
 
-First of slides under architecture sub-header
+![architecture](images/research-hub-architecture.png)
 
 ---
 
