@@ -128,8 +128,7 @@ The current iteration has a map-reduce structure, with each property (e.g. a spe
 
 ![airflow](images/airflow.png)
 
-left nodes: map tasks
-right nodes: reduce tasks
+*left*: map tasks, *right*: reduce tasks
 
 +++
 
