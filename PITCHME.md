@@ -154,6 +154,19 @@ These steps are parallelized using Airflow's CeleryExecutor. A 'map' task is cre
 
 We want a deterministic partition key, to be able to rerun a map task and use data for job postings that have already been processed. Our first choice was date, but aforementioned partner data error forced a new pick: year + last 4 digits of job posting id.
 
++++
+
+#### Data Dictionaries
+
+Each computed property enforces metadata that allows column names and data dictionaries to be built automatically.
+
+![computed-property](images/computed_property.png)
+
++++
+
+
+Datasets are output to a public s3 bucket, and served from our static site using a Javascript
+
 ---
 
 # Lessons Learned
