@@ -24,7 +24,7 @@ The Workforce Data Initiative is a partnership launched by the Obama White House
 
 Work in WDI has been divided into two groups:
 
-- *Open Skills Project* - Create a dynamic, open, common, locally relevant language for skills using public and private data. <- our focus today
+- *Open Skills Project* - Create a dynamic, open, common, locally relevant language for skills using public and private data. **<- our focus today**
 - *Workforce Training Provider Scorecards* - Improve available information on education and training outcomes.
 
 ---
@@ -41,17 +41,17 @@ The Open Skills Research Hub is a *collection of publicly available generated da
 
 +++
 
-#### What is the Research Hub?
+#### What is the Research Hub's Audience?
 
-The Research Hub is aimed primarily at the research community (e.g. labor economists, NLP researchers). One stated goal for the tabular datasets is for researchers not within the core development team at DSaPP to be able to publish whitepapers based on the data. At present, there are two public whitepapers that use Research Hub data.
+The Research Hub is aimed primarily at the research community (e.g. labor economists, NLP researchers). The goal is for these external researchers to be able to publish whitepapers based on the data. At present, there are two public whitepapers that use Research Hub data.
 
 +++
 
-#### What is the Research Hub?
+#### How can the Research Hub help the Audience?
 
-- Economists would like to answer a variety of questions about the labor market and how it changes over time and geography. Job ads can information about competencies, occupations, and wages that can be viewed across these axes.
+- Economists would like to answer a variety of questions about the labor market and how it changes over time and geography. Job ads can information about competencies, occupations, and wages that can be viewed across these axes. We are able to 
 
-- NLP researchers interested in the workforce would like to build on the work we've done in skills-ml
+- NLP researchers interested in the workforce would like to build on the work we've done in skills-ml 
 
 ---
 
@@ -74,33 +74,34 @@ The Research Hub is aimed primarily at the research community (e.g. labor econom
 
 Goal: common entry points for economists, making single files as useful as possible. When possible, choose a 'safe' version of an algorithm like skill extraction to represent here.
 
-- Counts of raw job titles by CBSA (and rolled up nationwide), with top skills, SOC codes, and wage data
-- Counts of cleaned job titles by CBSA (and rolled up nationwide), with top skills, SOC codes, and wage data
-- Counts of each SOC code by CBSA (and rolled up nationwide)
+- Grouping columns: CBSA, year, raw/cleaned job titles or given ONET SOC codes
+- Aggregate columns: Counts of job postings, top extracted skills, top inferred SOC codes, wage data
 
 +++
 
 #### Tabular datasets detailing skill extraction methods
 
-Goal: a window into skill data by either more adventurous economists or NLP researchers looking for more details on the tradeoffs inherent in different skill extraction approaches.
+Goal: a window into skill data by either more adventurous economists or NLP researchers looking for more details on the tradeoffs inherent in different skill extraction approaches. For each approach, package basic counts (year/soc code) alongside basic evaluation metrics
 
-- Exact match (ONET)
-- Fuzzy match using levenshtein (ONET)
-- Occupation-scoped Exact match (ONET)
-- Noun-phrase based (noun phrases that end with certain key words like 'skills' or 'ability')
-- bi-LSTM+CRF using human-labelled data from BRAT
+- Skill extractors: matching based on known competency framework strings, heuristic NLP approaches (e.g. noun phrases that end in 'skill/s'), trained models based on human-labelled data
+- Example Metrics: Recall of known competency frameworks (overall and per-occupation), total competency count, competencies per posting, competencies per occupation
 
 +++
 
-#### JSON-LD datasets
+#### JSON-LD competency ontologies
 
-Goal:
+Goal: Release known competency frameworks in the same format to inferred ontologies. Using the CTDL-ASN format, we can point the skills-ml Ontology class at URLs here to provide pre-mapped ontologies for use without bundling large datasets in the library code
+
+- Initially, just our mapping of ONET competencies/occupations
+- Can combine results of skill extraction as ontologies
 
 +++
 
 #### Sequence-tagged labels
 
-Goal:
+Goal: Release human-tagged labels so NLP researchers can improve on skill extraction approaches without needing to access private data.
+
+Human-tagging is done on a small sample of job postings that we can release so someone externally can build on this work to build a model using their own feature engineering.
 
 ---
 
