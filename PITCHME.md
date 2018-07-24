@@ -170,6 +170,13 @@ Datasets and data dictionaries are output to a public s3 bucket, and served from
 
 ![research hub](images/rhub-output.png)
 
++++
+
+#### Code
+
+- [skills-ml repo](https://github.com/workforce-data-initiative/skills-ml): Core, tested python library that is pip-installable
+- [skills-airflow repo](https://github.com/workforce-data-initiative/skills-airflow): Orchestration of tasks 
+
 ---
 
 # Lessons Learned
@@ -178,6 +185,43 @@ Datasets and data dictionaries are output to a public s3 bucket, and served from
 
 +++
 
-#### Lessons Learned
+#### Lessons Learned: Code
 
-First of slides under lessons learned sub-header
+Code layout: should python library and airflow orchestration be in different repos?
+
+Pros: Separation of concerns, forced us to keep core routines testable and usable outside of the orchestration context
+Cons: The users of the core routines (the orchestration DAGs) are disconnected so testing it is tough
+
+Maybe better plan: Merge the airflow work into the same repository but don't include it in the Python module, similarly to how Dockerfiles/documentation is bundled.
+
++++
+
+#### Lessons Learned: Testing
+
+Placeholder
+
++++
+
+#### Lessons Learned: Data Architecture
+
+Prior iterations of data architecture did not serialize output of 'map' steps to S3. Drawbacks of this included:
+
+- If an aggregation died 99% into it, you still had to do everything again
+- Different aggregations could not reuse the same computed properties
+- It was hard to trace confusing data in aggregations back to a job posting
+
+Current iteration improves on all of these fronts.
+
++++
+
+#### Lessons Learned: Data Architecture
+
+Existent problems:
+- Choice of partitioning key. Last four digits of id == 10000 partitions per year, which is overkill. Lots of time wasted in I/O. Last three digits (or even two?) would be much better.
+
+
++++
+
+#### Lessons Learned: Parallelism
+
+- Open question: Relying on Airflow for parallelism has some simplicity gains over something like Spark, but 
