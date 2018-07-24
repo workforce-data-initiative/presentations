@@ -112,7 +112,7 @@ Goal:
 
 #### Architecture
 
-![architecture](images/research-hub-architecture.svg)
+![architecture](https://github.com/workforce-data-initiative/presentations/blob/gitpitch/images/research-hub-architecture.svg)
 
 ---
 
