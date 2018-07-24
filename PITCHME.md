@@ -117,6 +117,19 @@ Human-tagging is done on a small sample of job postings that we can release so s
 
 ![architecture](images/research-hub-architecture.png)
 
++++
+
+#### How are the datasets computed?
+
+The current iteration has a map-reduce structure, with each property (e.g. a specific skill extractor or occupational classifier) being computed in the 'map' step, and saving its per-posting output to S3 (in partitioned files).
+
++++
+
+![airflow](images/airflow.png)
+
+left nodes: map tasks
+right nodes: reduce tasks
+
 ---
 
 # Lessons Learned
