@@ -160,12 +160,15 @@ We want a deterministic partition key, to be able to rerun a map task and use da
 
 Each computed property enforces metadata that allows column names and data dictionaries to be built automatically.
 
-![computed-property](images/computed_property.png)
+![computed property](images/computed_property.png)
 
 +++
 
+#### Output
 
-Datasets are output to a public s3 bucket, and served from our static site using a Javascript
+Datasets and data dictionaries are output to a public s3 bucket, and served from our static site using a JS library that allows browsing of public buckets.
+
+![research hub](images/rhub-output.png)
 
 ---
 
