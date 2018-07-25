@@ -264,4 +264,4 @@ Alternate plan: Last three digits (or even two?) would be closer to the original
 
 #### Lessons Learned: Parallelism
 
-- Open question: Relying on Airflow for parallelism has some simplicity gains over something like Spark.
+Open question: Relying on Airflow tasks and the built-in CeleryExecutor for parallelism has some simplicity gains over something like Spark or EMR: there is far less infrastructure to manage. Would it have been better to express all map-reduce in terms of Spark jobs?
