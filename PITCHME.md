@@ -141,6 +141,32 @@ Goal: Release couple representative analysis by generating comparable statistics
 
 +++
 
+#### Representativeness Analysis
+
+- There is no ground truth for the local labor demand
+- Source data sufferes from selection bias and duplication
+- NLP algorithms don't catch everything
+- There is potential bias in algorithms
+
++++
+
+#### Data Sources for Comparisons
+
+- OES - Occupational Employment Statistics
+    - Annual employment data and wage estimates for over 800 occupations
+    - Estimates are available for the nation a s a whole, individual States and metropolitan and nonmetropolitan areas
+    - Not job opening data
+- JOLTS - Job Openings and Labor Turnover Survey
+    - Collected from sampled establishments on a voluntary basis
+    - Includes employment, job openings, hires, quits, layoffs/discharges and separations
+    - Estimates are available for the nation as a whole and regions
+
++++
+
+#### Single Year Representativeness Summary Data Overview (2013)
+
+![overview_2013](images/overview_2013.png)
+
 #### Job number distribution by state
 ![job_num_dist](images/job_num_dist.png)
 
