@@ -20,13 +20,22 @@ The Workforce Data Initiative is a partnership launched by the Obama White House
 
 +++
 
-#### What is WDI?
+#### WDI Audience
+
+- Underemployed job seeker
+- Military spouse
+- Community Jobs Center Case Worker
+- Researcher or economist studying unemployment
+- Community college
+
++++
+
+#### How can WDI help its audience?
 
 Work in WDI has been divided into two groups:
 
 - *Open Skills Project* - Create a dynamic, open, common, locally relevant language for skills using public and private data. **<- our focus today**
 - *Workforce Training Provider Scorecards* - Improve available information on education and training outcomes.
-
 
 +++
 
@@ -318,3 +327,17 @@ Alternate plan: Last three digits (or even two?) would be closer to the original
 #### Lessons Learned: Parallelism
 
 Open question: Relying on Airflow tasks and the built-in CeleryExecutor for parallelism has some simplicity gains over something like Spark or EMR: there is far less infrastructure to manage. Would it have been better to express all map-reduce in terms of Spark jobs?
+
++++
+
+#### Lessons Learned: Airflow
+
+Open question: Should we have used Airflow at all?
+
+When the project started the vision was that we were going to have new data coming in all the time, and Airflow's temporal task model fits that well. The reality was that we ended up getting data in more traditional batches. Airflow works, but isn't uniquely suited to handle this type of data flow.
+
+Airflow seems to be getting more popular, so there aren't as many real alternatives.
+
+---
+
+# Thanks for Listening!
