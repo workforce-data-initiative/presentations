@@ -129,7 +129,7 @@ Goal: Release couple representative analysis by generating comparable statistics
 
 - Job number distribution by state
 - National occupation major group distribution
-- Occupation major group distribution for CBSAs
+- Occupation major group distribution for States
 - Occupation Distribution Correlation by state
 - Percent change in Research Hub data vs. JOLTS job openings data
 
