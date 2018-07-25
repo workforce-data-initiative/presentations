@@ -131,7 +131,7 @@ Goal: Release couple representative analysis by generating comparable statistics
 - National occupation major group distribution
 - Occupation major group distribution for CBSAs
 - Occupation Distribution Correlation by state
-- Percent change in Research Hub data v.s. JOLTS job openings data
+- Percent change in Research Hub data vs. JOLTS job openings data
 
 ---
 
@@ -143,6 +143,26 @@ Goal: Release couple representative analysis by generating comparable statistics
 
 #### Job number distribution by state
 ![job_num_dist](images/job_num_dist.png)
+
++++
+
+#### National occupation major group distribution
+![national_occ_dist](images/national_occ_dist.png)
+
++++
+
+#### Occuaption major group distribution for NY
+![major_groups_dist_ny](images/major_groups_dist_ny.png)
+
++++
+
+#### Occupation distribution correlation by state
+![occ_dist_state](images/occ_dist_state.png)
+
++++
+
+#### Percent change in Research Hub data vs. JOLTS Job openings
+![percent_change](images/percent_change_vs_jolts.png)
 
 ---
 
