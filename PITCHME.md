@@ -156,6 +156,11 @@ Goal: Release couple representative analysis by generating comparable statistics
     - Annual employment data and wage estimates for over 800 occupations
     - Estimates are available for the nation a s a whole, individual States and metropolitan and nonmetropolitan areas
     - Not job opening data
+
++++
+
+#### Data Sources for Comparisons
+
 - JOLTS - Job Openings and Labor Turnover Survey
     - Collected from sampled establishments on a voluntary basis
     - Includes employment, job openings, hires, quits, layoffs/discharges and separations
