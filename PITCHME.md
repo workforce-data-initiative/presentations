@@ -27,6 +27,19 @@ Work in WDI has been divided into two groups:
 - *Open Skills Project* - Create a dynamic, open, common, locally relevant language for skills using public and private data. **<- our focus today**
 - *Workforce Training Provider Scorecards* - Improve available information on education and training outcomes.
 
+
++++
+
+#### ONET
+
+The Open Skills Project aims to use data to improve on ONET, a competency and occupation framework produced by the Department of Labor using survey data. ONET is a good start but does not have any geographic granularity and is slow to update.
+
++++
+
+#### Open Skills Project
+
+Early work in the Open Skills Project focused on the Open Skills API, which presents data on skills and occupations as an open API. This was launched using only ONET survey data in 2016.Originally the contents were to be replaced with data from job ads but the team wanted to gain confidence in results before packaging conclusions in an API. Development priorities were shifted to what would become the Research Hub.
+
 ---
 
 # What is the Research Hub?
@@ -132,6 +145,12 @@ Goal: Release couple representative analysis by generating comparable statistics
 
 +++
 
+#### How is data input into the system?
+
+Job postings from various sources (on the order of tens of millions) are converted into the schema.org JobPosting format and serialized as one JSON object on each line. An id is assigned of a partner prefix followed by the id that the partner gave to the job posting. This data is stored in partitions of year+last four digits of id, on S3.
+
++++
+
 #### How are the datasets computed?
 
 The current iteration has a map-reduce structure, with each property (e.g. a specific skill extractor or occupational classifier) being computed in the 'map' step, and saving its per-posting output to S3 (in partitioned files). Each dataset is the result of a 'reduce' task that reads from the results from various 'map' tasks.
@@ -187,24 +206,26 @@ Datasets and data dictionaries are output to a public s3 bucket, and served from
 
 #### Lessons Learned: Code
 
-Code layout: should python library and airflow orchestration be in different repos?
+Was the two-repo design good?
 
 Pros: Separation of concerns, forced us to keep core routines testable and usable outside of the orchestration context
-Cons: The users of the core routines (the orchestration DAGs) are disconnected so testing it is tough
+Cons: The users of the core routines (the orchestration DAGs) are disconnected so testing it is tough.
 
-Maybe better plan: Merge the airflow work into the same repository but don't include it in the Python module, similarly to how Dockerfiles/documentation is bundled.
+Alternate plan: Merge the airflow work into the same repository but don't include it in the Python module.
 
 +++
 
 #### Lessons Learned: Testing
 
-Placeholder
+Airflow code is hard to test because nothing is mockable; it shells out for everything. We never really addressed this head-on, and instead opted to move as much code as possible out of Airflow and into skills-ml.
+
+Alternate plan: Since we already have an application-level config file that contains all input and output paths, utilize a test configuration file to create a full integration test without the need for any code-level mocks.
 
 +++
 
-#### Lessons Learned: Data Architecture
+#### Lessons Learned: Aggregation
 
-Prior iterations of data architecture did not serialize output of 'map' steps to S3. Drawbacks of this included:
+Prior iterations of aggregation architecture did not serialize output of 'map' steps to S3. Drawbacks of this included:
 
 - If an aggregation died 99% into it, you still had to do everything again
 - Different aggregations could not reuse the same computed properties
@@ -214,14 +235,20 @@ Current iteration improves on all of these fronts.
 
 +++
 
-#### Lessons Learned: Data Architecture
+#### Lessons Learned: Partitioning
 
-Existent problems:
-- Choice of partitioning key. Last four digits of id == 10000 partitions per year, which is overkill. Lots of time wasted in I/O. Last three digits (or even two?) would be much better.
+Prior iterations of the input ETL partitioned data using a deterministic size (load 10k postings into a file with a randomly-generated name), rather than deterministic location. Deterministic location is more helpful, in the absence of loading the data into a traditional database that supports ID lookups.
 
++++
+
+#### Lessons Learned: Partitioning
+
+Choice of partitioning key is subpar. Last four digits of id == 10000 partitions per year, which is overkill. Lots of time wasted in I/O.
+
+Alternate plan: Last three digits (or even two?) would be closer to the original goal of daily partitions
 
 +++
 
 #### Lessons Learned: Parallelism
 
-- Open question: Relying on Airflow for parallelism has some simplicity gains over something like Spark, but 
+- Open question: Relying on Airflow for parallelism has some simplicity gains over something like Spark.
