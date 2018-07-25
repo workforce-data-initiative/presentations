@@ -108,7 +108,7 @@ Human-tagging is done on a small sample of job postings that we can release so s
 
 +++
 
-#### Representative analysis
+#### Representativeness analysis
 
 Goal: Release couple representative analysis by generating comparable statistics by occupation, geography, and time from both Research Hub data and relevent national labor market datasets released by the Bureau of Labor Statistics.
 
@@ -117,6 +117,17 @@ Goal: Release couple representative analysis by generating comparable statistics
 - Occupation major group distribution for CBSAs
 - Occupation Distribution Correlation by state
 - Percent change in Research Hub data v.s. JOLTS job openings data
+
+---
+
+# Representativeness Analysis
+
+@fa[arrow-down]
+
++++
+
+#### Job number distribution by state
+![job_num_dist](images/job_num_dist.png)
 
 ---
 
