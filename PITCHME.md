@@ -208,6 +208,32 @@ Goal: Release couple representative analysis by generating comparable statistics
 
 ---
 
+# How has the Research Hub been used?
+
+@fa[arrow-down]
+
++++
+
+#### Whitepaper 1: 
+
+'Costs of Occupation Switching', Nayoung Rim
+
+Differentiating between individual-related reasons for the worker's decision and market-related reasons (lack of job opportunities)
+
+Used data to obtain # of job opportunities available to worker
+
++++
+
+#### Whitepaper 2:
+
+'The Effect of Additional Authority on Job Postings: The Case for Nurse Practitioners', Sarah Bana
+
+Analyzing state policy's effect on demand for nurse practitioners.
+
+Used data to obtain demand for nurse practitioners before and after policy changes
+
+---
+
 # Architecture
 
 @fa[arrow-down]
