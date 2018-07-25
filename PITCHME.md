@@ -38,7 +38,9 @@ The Open Skills Project aims to use data to improve on ONET, a competency and oc
 
 #### Open Skills Project
 
-Early work in the Open Skills Project focused on the Open Skills API, which presents data on skills and occupations as an open API. This was launched using only ONET survey data in 2016.Originally the contents were to be replaced with data from job ads but the team wanted to gain confidence in results before packaging conclusions in an API. Development priorities were shifted to what would become the Research Hub.
+Early work in the Open Skills Project focused on the Open Skills API, which presents data on skills and occupations as an open API. This was launched using only ONET survey data in 2016.
+
+Originally the contents were to be replaced with data from job ads but the team wanted to gain confidence in results before packaging conclusions in an API. Development priorities were shifted to what would become the Research Hub.
 
 ---
 
